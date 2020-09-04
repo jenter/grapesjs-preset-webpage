@@ -1,4 +1,6 @@
-import grapesjs from 'grapesjs';
+import grapesjsOriginal from 'grapesjs';
+import grapesjsExperimental from 'grapesjsExperimental';
+
 import pluginBlocks from 'grapesjs-blocks-basic';
 import pluginNavbar from 'grapesjs-navbar';
 import pluginCountdown from 'grapesjs-component-countdown';
@@ -12,6 +14,8 @@ import blocks from './blocks';
 import components from './components';
 import panels from './panels';
 import styles from './styles';
+
+let grapesjs = window.useExperimentalGrapes ? grapesjsExperimental : grapesjsOriginal;
 
 export default grapesjs.plugins.add('gjs-preset-webpage', (editor, opts = {}) => {
   let config = opts;
